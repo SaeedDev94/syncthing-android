@@ -369,15 +369,7 @@ class OnboardingActivity : ThemedAppCompatActivity() {
     }
 
 
-    private fun haveNotificationPermission(): Boolean {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-            return true
-        }
-        return ContextCompat.checkSelfPermission(
-            this,
-            Manifest.permission.POST_NOTIFICATIONS
-        ) == PackageManager.PERMISSION_GRANTED
-    }
+    private fun haveNotificationPermission(): Boolean = true
 
     private fun requestLocationPermission() {
         when {
